@@ -62,8 +62,8 @@
             lastY = y;
         });
 
-        // Active link highlighting
-        const links = $$(".nav__link");
+        // Active link highlighting (only for in-page "#section" links; page links are set in the HTML)
+        const links = $$(".nav__link").filter((l) => (l.getAttribute("href") || "").startsWith("#"));
         const sections = links.map((l) => $(l.getAttribute("href"))).filter(Boolean);
         const io = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -653,11 +653,207 @@
     }
 
     /* =========================
+       ENQUIRY FORM — live validation, progress, WhatsApp hand-off, success state
+    ========================= */
+    function initEnquiryForm() {
+        const form = $("#enquiryForm");
+        if (!form) return;
+        const WHATSAPP = "919820777655";
+        const required = $$("[required]", form);
+        const bar = $(".eform__bar span", form);
+        const pctEl = $(".eform__progress b", form);
+        const centreWrap = $(".eform__reveal", form);
+        const submitBtn = $("button[type=submit]", form);
+
+        const rules = {
+            name: (v) => v.trim().length >= 2 || "Please enter your name.",
+            phone: (v) => /^[+]?[\d\s-]{10,15}$/.test(v.trim()) || "Enter a valid phone number (10+ digits).",
+            email: (v) => !v.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || "Enter a valid email address.",
+            curriculum: (v) => !!v || "Please choose a curriculum.",
+        };
+
+        const fieldOf = (el) => el.closest(".field");
+        const validate = (el) => {
+            const rule = rules[el.name];
+            if (!rule) return true;
+            const res = rule(el.value);
+            const field = fieldOf(el);
+            if (!field) return res === true;
+            field.classList.toggle("is-invalid", res !== true);
+            field.classList.toggle("is-valid", res === true && !!el.value.trim());
+            const err = $(".field__err", field);
+            if (err) err.textContent = res === true ? "" : res;
+            return res === true;
+        };
+
+        const progress = () => {
+            const tracked = [...required, $("[name=grade]", form), $("[name=message]", form)].filter(Boolean);
+            const done = tracked.filter((el) => (el.type === "checkbox" ? el.checked : el.value.trim())).length
+                + ($("[name=mode]:checked", form) ? 1 : 0);
+            const pct = Math.round((done / (tracked.length + 1)) * 100);
+            if (bar) bar.style.width = pct + "%";
+            if (pctEl) pctEl.textContent = pct + "%";
+        };
+
+        const toggleCentre = () => {
+            const mode = $("[name=mode]:checked", form);
+            if (centreWrap) centreWrap.classList.toggle("is-open", !!mode && mode.value === "At a centre");
+        };
+
+        form.addEventListener("input", (e) => {
+            if (fieldOf(e.target)?.classList.contains("is-invalid")) validate(e.target);
+            progress();
+        });
+        form.addEventListener("change", (e) => {
+            if (e.target.name === "mode") toggleCentre();
+            if (e.target.name === "consent") e.target.closest(".consent").classList.remove("is-invalid");
+            progress();
+        });
+        $$("input, select, textarea", form).forEach((el) => el.addEventListener("blur", () => { if (el.value) validate(el); }));
+
+        // "Enquire about X" buttons anywhere on the page pre-select the curriculum
+        document.addEventListener("click", (e) => {
+            const trigger = e.target.closest("[data-enquire]");
+            if (!trigger) return;
+            const select = $("[name=curriculum]", form);
+            if (select) { select.value = trigger.dataset.enquire; validate(select); progress(); }
+        });
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const fields = $$("input, select, textarea", form).filter((el) => rules[el.name]);
+            const ok = fields.map(validate).every(Boolean);
+            const consent = $("[name=consent]", form);
+            const consentOk = !consent || consent.checked;
+            if (consent) consent.closest(".consent").classList.toggle("is-invalid", !consentOk);
+            if (!ok || !consentOk) {
+                const first = $(".is-invalid input, .is-invalid select, .is-invalid textarea", form) || consent;
+                if (first) first.focus({ preventScroll: false });
+                return;
+            }
+
+            const data = new FormData(form);
+            const lines = [
+                "Hello Knowly! I'd like to enquire about tutoring.",
+                "",
+                `Name: ${data.get("name")}`,
+                `Phone: ${data.get("phone")}`,
+                data.get("email") ? `Email: ${data.get("email")}` : "",
+                `Curriculum: ${data.get("curriculum")}`,
+                data.get("grade") ? `Grade: ${data.get("grade")}` : "",
+                data.get("mode") ? `Preferred format: ${data.get("mode")}` : "",
+                data.get("mode") === "At a centre" && data.get("centre") ? `Centre: ${data.get("centre")}` : "",
+                data.get("message") ? `Message: ${data.get("message")}` : "",
+            ].filter((l, i) => l !== "" || i === 1);
+
+            submitBtn.classList.add("is-loading");
+            setTimeout(() => {
+                window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener");
+                submitBtn.classList.remove("is-loading");
+                const who = $(".eform__who", form);
+                if (who) who.textContent = String(data.get("name")).trim().split(" ")[0];
+                form.classList.add("is-sent");
+            }, reducedMotion ? 0 : 700);
+        });
+
+        const reset = $(".eform__again", form);
+        if (reset) reset.addEventListener("click", () => {
+            form.reset();
+            form.classList.remove("is-sent");
+            $$(".field", form).forEach((f) => f.classList.remove("is-invalid", "is-valid"));
+            toggleCentre();
+            progress();
+        });
+
+        toggleCentre();
+        progress();
+    }
+
+    /* =========================
+       COURSES PAGE — board filter + deep links (courses.html#ib)
+    ========================= */
+    function initCourseCards() {
+        const grid = $(".cgrid");
+        const filter = $(".cfilter");
+        if (!grid || !filter) return;
+        const cards = $$(".ccard", grid);
+        const buttons = $$(".cfilter__btn", filter);
+        const matches = (c, cat) => cat === "all" || c.dataset.cat.split(" ").includes(cat);
+        const countEl = $("[data-filter-count]");
+        let timer = null;
+
+        buttons.forEach((b) => {
+            const count = $("b", b);
+            if (count) count.textContent = cards.filter((c) => matches(c, b.dataset.filter)).length;
+        });
+
+        const apply = (cat) => {
+            buttons.forEach((b) => {
+                const on = b.dataset.filter === cat;
+                b.classList.toggle("is-active", on);
+                b.setAttribute("aria-pressed", String(on));
+            });
+            if (countEl) countEl.textContent = cards.filter((c) => matches(c, cat)).length;
+            cards.forEach((c) => c.classList.add("is-hiding"));
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                let i = 0;
+                cards.forEach((c) => {
+                    const show = matches(c, cat);
+                    c.classList.toggle("is-hidden", !show);
+                    if (show) {
+                        c.style.transitionDelay = `${i++ * 70}ms`;
+                        requestAnimationFrame(() => requestAnimationFrame(() => c.classList.remove("is-hiding")));
+                    }
+                });
+                setTimeout(() => cards.forEach((c) => (c.style.transitionDelay = "")), 900);
+            }, reducedMotion ? 0 : 320);
+        };
+
+        filter.addEventListener("click", (e) => {
+            const b = e.target.closest(".cfilter__btn");
+            if (b) apply(b.dataset.filter);
+        });
+
+        // courses.html#ib → filter to that board and highlight the card
+        const fromHash = () => {
+            const id = location.hash.slice(1);
+            if (!id) return;
+            const isFilter = buttons.some((b) => b.dataset.filter === id);
+            const byId = cards.find((c) => c.id === id);
+            if (!isFilter && !byId) return;
+            apply(isFilter ? id : "all");
+            const card = byId || cards.find((c) => matches(c, id));
+            if (card) setTimeout(() => {
+                card.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" });
+                card.classList.add("is-target");
+                setTimeout(() => card.classList.remove("is-target"), 3400);
+            }, 450);
+        };
+        window.addEventListener("hashchange", fromHash);
+        fromHash();
+    }
+
+    /* =========================
+       CURSOR SPOTLIGHT on light tiles / course cards (desktop)
+    ========================= */
+    function initSpotlight() {
+        if (!finePointer || reducedMotion) return;
+        $$(".tile, .ccard").forEach((el) => {
+            el.addEventListener("pointermove", (e) => {
+                const r = el.getBoundingClientRect();
+                el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+                el.style.setProperty("--my", `${e.clientY - r.top}px`);
+            });
+        });
+    }
+
+    /* =========================
        FOOTER — courses list from course cards
     ========================= */
     function initFooter() {
         const list = $("#footerCourses");
-        if (list) {
+        if (list && !list.children.length) {
             const frag = document.createDocumentFragment();
             $$(".prog__name").forEach((h) => {
                 const li = document.createElement("li");
@@ -693,6 +889,9 @@
         initBackToTop();
         initFAQ();
         initTestimonials();
+        initEnquiryForm();
+        initCourseCards();
+        initSpotlight();
         initFooter();
         runScroll();
     });

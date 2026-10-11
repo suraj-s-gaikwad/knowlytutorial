@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowly Blog | Study Skills, Maths &amp; Tips for Parents</title>
+    <meta name="description" content="Knowly Blog — thoughtful perspectives on learning, exam preparation and the everyday habits that help students grow. For curious minds and caring grown-ups.">
+    <meta name="theme-color" content="#3E9B63">
+    <link rel="canonical" href="https://knowlytutorials.com/blog.html">
+    <link rel="icon" type="image/png" href="assets/images/logo1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <p class="topbar__welcome"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Big dreams. Brighter minds. The Knowly way.</p>
+            <ul class="topbar__info">
+                <li><a href="tel:+919820777655"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 98207 77655</a></li>
+                <li class="hide-sm"><a href="mailto:hello@knowlytutorials.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> hello@knowlytutorials.com</a></li>
+                <li class="hide-md"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Breach Candy · Kandivali · Santacruz · Parel</li>
+            </ul>
+            <ul class="topbar__social">
+                <li><a href="https://www.instagram.com/knowlylearningcentre/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/@KnowlyLearning" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="https://www.facebook.com/p/Knowly-Tutorials-61571922194889/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo" aria-label="Knowly Tutorials — Home">
+                <img class="logo__img" src="assets/images/logo1.png" alt="Knowly logo" width="145" height="66" decoding="async" fetchpriority="high">
+            </a>
+            <nav class="nav" aria-label="Primary">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__has-drop">
+                        <a href="courses.html" class="nav__link">Courses <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
+                        <ul class="nav__drop">
+                            <li><a href="courses.html#ib">International Baccalaureate</a></li>
+                            <li><a href="courses.html#cambridge">Cambridge &amp; UK Boards</a></li>
+                            <li><a href="courses.html#american">American Curriculum</a></li>
+                            <li><a href="courses.html#test">Test Prep &amp; Competitive</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="why-choose-us.html" class="nav__link">Why Choose Us</a></li>
+                    <li><a href="team.html" class="nav__link">Team</a></li>
+                    <li><a href="worksheets.html" class="nav__link">Worksheets</a></li>
+                    <li><a href="blog.html" class="nav__link is-active" aria-current="page">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html#enquiry" class="btn btn--primary btn--sm header__cta" data-cursor="Enquire"><span>Enquire Now</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <!-- MOBILE DRAWER -->
+    <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+    <aside class="drawer" id="drawer" aria-label="Mobile menu" aria-hidden="true">
+        <div class="drawer__head">
+            <img class="logo__img" src="assets/images/logo1.png" alt="Knowly" width="97" height="44">
+            <button class="drawer__close" id="drawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <ul class="drawer__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="drawer__acc">
+                <button class="drawer__acc-btn" aria-expanded="false">Courses<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+                <ul class="drawer__sub">
+                    <li><a href="courses.html">All Programs</a></li>
+                    <li><a href="courses.html#ib">International Baccalaureate</a></li>
+                    <li><a href="courses.html#cambridge">Cambridge &amp; UK Boards</a></li>
+                    <li><a href="courses.html#american">American Curriculum</a></li>
+                    <li><a href="courses.html#test">Test Prep &amp; Competitive</a></li>
+                </ul>
+            </li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="worksheets.html">Worksheets</a></li>
+            <li><a href="blog.html" aria-current="page">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="drawer__foot">
+            <a href="contact.html#enquiry" class="btn btn--primary btn--block"><span>Enquire Now</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="tel:+919820777655" class="drawer__contact"><i class="fa-solid fa-phone"></i> +91 98207 77655</a>
+            <a href="mailto:hello@knowlytutorials.com" class="drawer__contact"><i class="fa-regular fa-envelope"></i> hello@knowlytutorials.com</a>
+        </div>
+    </aside>
+
+    <main id="main">
+
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="page-hero__bg" aria-hidden="true"><span class="blob blob--1"></span><span class="blob blob--2"></span></div>
+            <div class="container page-hero__inner">
+                <div class="page-hero__content">
+                    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html"><i class="fa-solid fa-house"></i> Home</a><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span>Blog</span></nav>
+                    <span class="eyebrow">Knowly Blog</span>
+                    <h1 class="page-hero__title">For curious minds.<br><em>And caring grown-ups.</em></h1>
+                    <p class="page-hero__text">Thoughtful perspectives on learning, exam preparation and the everyday habits that help students grow.</p>
+                    <div class="page-hero__ctas">
+                        <a href="#stories" class="btn btn--primary" data-cursor="Read"><span>Read the stories</span><i class="fa-solid fa-arrow-down"></i></a>
+                        <a href="worksheets.html" class="btn btn--ghost"><span>Free worksheets</span><i class="fa-solid fa-file-pen"></i></a>
+                    </div>
+                </div>
+                <div class="orbit" aria-hidden="true">
+                    <div class="orbit__ring"></div><div class="orbit__ring orbit__ring--2"></div><div class="orbit__ring orbit__ring--3"></div>
+                    <div class="orbit__track">
+                        <span class="orbit__dot" style="--a:0deg"><i class="fa-solid fa-book-open"></i></span>
+                        <span class="orbit__dot orbit__dot--accent" style="--a:90deg"><i class="fa-solid fa-lightbulb"></i></span>
+                        <span class="orbit__dot" style="--a:180deg"><i class="fa-solid fa-calculator"></i></span>
+                        <span class="orbit__dot orbit__dot--dark" style="--a:270deg"><i class="fa-solid fa-people-roof"></i></span>
+                    </div>
+                    <div class="orbit__track orbit__track--inner">
+                        <span class="orbit__dot" style="--a:30deg"><i class="fa-solid fa-clock"></i></span>
+                        <span class="orbit__dot" style="--a:150deg"><i class="fa-solid fa-heart"></i></span>
+                        <span class="orbit__dot" style="--a:270deg"><i class="fa-solid fa-pencil"></i></span>
+                    </div>
+                    <div class="orbit__core"><i class="fa-solid fa-feather-pointed"></i></div>
+                    <div class="float-card float-card--a"><span class="float-card__icon"><i class="fa-solid fa-book-open-reader"></i></span><div><strong>Study skills</strong><small>Habits that stick</small></div></div>
+                    <div class="float-card float-card--b"><span class="float-card__icon float-card__icon--accent"><i class="fa-solid fa-people-roof"></i></span><div><strong>For parents</strong><small>Support without pressure</small></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG GRID -->
+        <section class="section" id="stories">
+            <div class="container">
+                <div class="section-head section-head--split">
+                    <div>
+                        <span class="eyebrow" data-aos="fade-up">Latest Stories</span>
+                        <h2 class="section-title text-reveal"><span class="line"><span>Ideas worth <em>learning from.</em></span></span></h2>
+                    </div>
+                    <p class="section-sub" data-aos="fade-up">Short reads on study skills, mathematics and how families can support learning at home.</p>
+                </div>
+
+                <div class="bgrid">
+                    <article class="bcard" data-aos="fade-up">
+                        <a href="#revision-routine" class="bcard__img"><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="Student walking between library shelves" width="900" height="560" loading="lazy"></a>
+                        <div class="bcard__body">
+                            <div class="bcard__meta"><span class="bcard__cat">Study skills</span><span><i class="fa-regular fa-clock"></i> 4 min read</span></div>
+                            <h3>A revision routine you can actually stick to.</h3>
+                            <p>Making time for focused practice, useful feedback and some breathing room.</p>
+                            <a href="#revision-routine" class="link-arrow">Read the story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="bcard" data-aos="fade-up" data-aos-delay="80">
+                        <a href="#working-to-understanding" class="bcard__img"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="Student writing in a notebook" width="900" height="560" loading="lazy"></a>
+                        <div class="bcard__body">
+                            <div class="bcard__meta"><span class="bcard__cat">Mathematics</span><span><i class="fa-regular fa-clock"></i> 3 min read</span></div>
+                            <h3>Getting the answer is only the beginning.</h3>
+                            <p>Three questions that help turn a correct method into real understanding.</p>
+                            <a href="#working-to-understanding" class="link-arrow">Read the story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="bcard" data-aos="fade-up" data-aos-delay="160">
+                        <a href="#make-the-most-of-tutoring" class="bcard__img"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="Learners studying together around a table" width="900" height="560" loading="lazy"></a>
+                        <div class="bcard__body">
+                            <div class="bcard__meta"><span class="bcard__cat">For parents</span><span><i class="fa-regular fa-clock"></i> 4 min read</span></div>
+                            <h3>Small habits. More meaningful progress.</h3>
+                            <p>How families and tutors can work together without adding pressure.</p>
+                            <a href="#make-the-most-of-tutoring" class="link-arrow">Read the story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- POSTS -->
+        <section class="section section--soft">
+            <div class="container">
+                <article class="post" id="revision-routine" data-aos="fade-up">
+                    <div class="post__cover">
+                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Student walking between library shelves" width="1600" height="700" loading="lazy">
+                        <div class="post__cover-meta"><span class="post__cat">Study skills</span><span><i class="fa-regular fa-clock"></i> 4 min read</span></div>
+                    </div>
+                    <div class="post__body">
+                        <h2>A revision routine you can actually <em>stick to.</em></h2>
+                        <p class="post__lead">Most revision plans fail for the same reason: they are built for a perfect week that never arrives. A routine that works is smaller, kinder and far more consistent.</p>
+                        <div class="post__step">
+                            <h3>Start small and protect the time</h3>
+                            <p>Thirty focused minutes a day beats a four-hour cram on Sunday. Pick a regular slot, put the phone in another room and decide before you sit down exactly which topic you will work on.</p>
+                        </div>
+                        <div class="post__step">
+                            <h3>Practise, don’t just re-read</h3>
+                            <p>Highlighting feels productive, but retrieval is what builds memory. Close the book and try a question, write out a method from scratch or explain a concept aloud.</p>
+                        </div>
+                        <div class="post__step">
+                            <h3>Leave room to breathe</h3>
+                            <p>Rest is part of the plan, not a reward for finishing it. Build in one lighter day each week, and the routine will still be standing when exams arrive.</p>
+                        </div>
+                        <div class="post__box">
+                            <h4><i class="fa-solid fa-list-check"></i> Quick takeaways</h4>
+                            <ul class="check-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Try past-paper questions on one topic at a time</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Mark your work and note every mistake</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Revisit the hardest topics again a few days later</li>
+                            </ul>
+                        </div>
+                        <div class="post__foot">
+                            <span class="post__by"><img src="assets/images/logo1.png" alt="" width="40" height="40"> Team Knowly</span>
+                            <a href="worksheets.html" class="link-arrow">Get practice worksheets <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" id="working-to-understanding" data-aos="fade-up">
+                    <div class="post__cover">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Student writing in a notebook" width="1600" height="700" loading="lazy">
+                        <div class="post__cover-meta"><span class="post__cat">Mathematics</span><span><i class="fa-regular fa-clock"></i> 3 min read</span></div>
+                    </div>
+                    <div class="post__body">
+                        <h2>Getting the answer is only <em>the beginning.</em></h2>
+                        <p class="post__lead">A correct answer tells you the method worked once. Understanding means knowing why it worked — and when it won’t. After you finish a question, ask yourself three things.</p>
+                        <div class="post__step">
+                            <h3>Why does this method work?</h3>
+                            <p>Try to explain each step in a sentence. If you can only say “because that’s the rule”, there is something worth revisiting.</p>
+                        </div>
+                        <div class="post__step">
+                            <h3>What would change if the question changed?</h3>
+                            <p>Swap a positive number for a negative, or a line for a curve. Predicting what happens next turns a single answer into a pattern you can reuse.</p>
+                        </div>
+                        <div class="post__step">
+                            <h3>Can I check it another way?</h3>
+                            <p>Substitute your answer back, sketch a quick graph or estimate the size of the result. A second route builds confidence and catches small slips before the exam does.</p>
+                        </div>
+                        <blockquote class="post__quote">A right answer is a result. Knowing why it’s right is <em>understanding.</em></blockquote>
+                        <div class="post__foot">
+                            <span class="post__by"><img src="assets/images/logo1.png" alt="" width="40" height="40"> Team Knowly</span>
+                            <a href="worksheets.html" class="link-arrow">Practise with our maths worksheets <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" id="make-the-most-of-tutoring" data-aos="fade-up">
+                    <div class="post__cover">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Learners studying together around a table" width="1600" height="700" loading="lazy">
+                        <div class="post__cover-meta"><span class="post__cat">For parents</span><span><i class="fa-regular fa-clock"></i> 4 min read</span></div>
+                    </div>
+                    <div class="post__body">
+                        <h2>Small habits. More <em>meaningful progress.</em></h2>
+                        <p class="post__lead">Tutoring works best when learning continues gently between sessions. Families don’t need to become teachers — a few small habits make a real difference.</p>
+                        <div class="post__step">
+                            <h3>Ask about the learning, not the score</h3>
+                            <p>“What did you figure out today?” opens a better conversation than “What marks did you get?”. It shows your child that effort and curiosity matter.</p>
+                        </div>
+                        <div class="post__step">
+                            <h3>Keep a steady rhythm</h3>
+                            <p>A regular time and a quiet place to study help learning become a habit rather than a negotiation.</p>
+                        </div>
+                        <div class="post__step">
+                            <h3>Stay connected with the tutor</h3>
+                            <p>Share what you notice at home — a topic that causes stress or a new interest. Small updates help the tutor meet your child exactly where they are.</p>
+                        </div>
+                        <div class="post__box">
+                            <h4><i class="fa-solid fa-list-check"></i> Quick takeaways</h4>
+                            <ul class="check-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Celebrate effort and small wins</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Keep the pressure low and the routine steady</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Talk to the tutor early if something feels off</li>
+                            </ul>
+                        </div>
+                        <div class="post__foot">
+                            <span class="post__by"><img src="assets/images/logo1.png" alt="" width="40" height="40"> Team Knowly</span>
+                            <a href="contact.html#enquiry" class="link-arrow">Talk to our team <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="join" data-aos="fade-up">
+                    <div>
+                        <h3>Ready to start the conversation? <em>Let’s talk.</em></h3>
+                        <p>Tell us about your child’s curriculum and goals — we’ll guide you on the right support.</p>
+                    </div>
+                    <a href="contact.html#enquiry" class="btn btn--light"><span>Enquire Now</span><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__pattern" aria-hidden="true"></div>
+        <div class="container footer__grid">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo" aria-label="Knowly Tutorials — Home"><img src="assets/images/logo1.png" alt="Knowly" width="132" height="60" loading="lazy"></a>
+                <p>A little guidance. A world of possibility. Personalised tutoring for international curricula — in-centre, at home and online.</p>
+                <ul class="footer__social">
+                    <li><a href="https://www.instagram.com/knowlylearningcentre/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/@KnowlyLearning" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="https://www.facebook.com/p/Knowly-Tutorials-61571922194889/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://wa.me/919820777655" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer__title">Quick Links</h3>
+                <ul class="footer__links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="worksheets.html">Worksheets</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer__title">Courses</h3>
+                <ul class="footer__links" id="footerCourses">
+                    <li><a href="courses.html#ib">International Baccalaureate</a></li>
+                    <li><a href="courses.html#cambridge">Cambridge IGCSE &amp; AS/A Levels</a></li>
+                    <li><a href="courses.html#gcse">GCSE</a></li>
+                    <li><a href="courses.html#american">American Curriculum</a></li>
+                    <li><a href="courses.html#ap">Advanced Placement (AP)</a></li>
+                    <li><a href="courses.html#sat">SAT / ACT</a></li>
+                    <li><a href="courses.html#olympiad">Competitive Exams &amp; Olympiads</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer__title">Contact</h3>
+                <ul class="footer__contact">
+                    <li><i class="fa-solid fa-location-dot"></i><span>1st Floor, Hormuz Mansion, 72 Bhulabhai Desai Marg, Breach Candy, Mumbai 400026</span></li>
+                    <li><i class="fa-solid fa-phone"></i><a href="tel:+919820777655">+91 98207 77655</a></li>
+                    <li><i class="fa-regular fa-envelope"></i><a href="mailto:hello@knowlytutorials.com">hello@knowlytutorials.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>© <span id="year">2026</span> Knowly Tutorials. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="to-top" id="toTop" aria-label="Back to top">
+        <svg viewBox="0 0 52 52" aria-hidden="true"><circle class="to-top__track" cx="26" cy="26" r="23"/><circle class="to-top__ring" cx="26" cy="26" r="23" pathLength="1"/></svg>
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+</html>

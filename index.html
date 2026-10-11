@@ -97,29 +97,33 @@
     ========================= -->
     <header class="header" id="header">
         <div class="container header__inner">
-            <a href="#home" class="logo" aria-label="Knowly Tutorials — Home">
-                <img class="logo__img" src="assets/images/logo1.png" alt="Knowly logo" width="145" height="66" decoding="async" fetchpriority="high">            </a>
+            <a href="index.html" class="logo" aria-label="Knowly Tutorials — Home">
+                <img class="logo__img" src="assets/images/logo1.png" alt="Knowly logo" width="145" height="66" decoding="async" fetchpriority="high">
+            </a>
 
             <nav class="nav" aria-label="Primary">
                 <ul class="nav__list">
-                    <li><a href="#home" class="nav__link is-active">Home</a></li>
-                    <li><a href="#about" class="nav__link">About</a></li>
+                    <li><a href="index.html" class="nav__link is-active" aria-current="page">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
                     <li class="nav__has-drop">
-                        <a href="#courses" class="nav__link">Courses <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
+                        <a href="courses.html" class="nav__link">Courses <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
                         <ul class="nav__drop">
-                            <li><a href="#courses" data-filter-link="ib">International Baccalaureate</a></li>
-                            <li><a href="#courses" data-filter-link="cambridge">Cambridge &amp; UK Boards</a></li>
-                            <li><a href="#courses" data-filter-link="american">American Curriculum</a></li>
-                            <li><a href="#courses" data-filter-link="test">Test Prep &amp; Competitive</a></li>
+                            <li><a href="courses.html#ib">International Baccalaureate</a></li>
+                            <li><a href="courses.html#cambridge">Cambridge &amp; UK Boards</a></li>
+                            <li><a href="courses.html#american">American Curriculum</a></li>
+                            <li><a href="courses.html#test">Test Prep &amp; Competitive</a></li>
                         </ul>
                     </li>
-                    <li><a href="#services" class="nav__link">Services</a></li>
-                    <li><a href="#why" class="nav__link">Why Choose Us</a></li>
-                    <li><a href="#contact" class="nav__link">Contact</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="why-choose-us.html" class="nav__link">Why Choose Us</a></li>
+                    <li><a href="team.html" class="nav__link">Team</a></li>
+                    <li><a href="worksheets.html" class="nav__link">Worksheets</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
                 </ul>
             </nav>
 
-            <a href="#contact" class="btn btn--primary btn--sm header__cta" data-cursor="Enquire">
+            <a href="#enquiry" class="btn btn--primary btn--sm header__cta" data-cursor="Enquire">
                 <span>Enquire Now</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
 
@@ -135,26 +139,31 @@
     <div class="drawer-overlay" id="drawerOverlay" hidden></div>
     <aside class="drawer" id="drawer" aria-label="Mobile menu" aria-hidden="true">
         <div class="drawer__head">
-            <img class="logo__img" src="assets/images/logo1.png" alt="Knowly" width="97" height="44">            <button class="drawer__close" id="drawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+            <img class="logo__img" src="assets/images/logo1.png" alt="Knowly" width="97" height="44">
+            <button class="drawer__close" id="drawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <ul class="drawer__list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="about.html">About</a></li>
             <li class="drawer__acc">
-                <button class="drawer__acc-btn" aria-expanded="false">Courses <i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+                <button class="drawer__acc-btn" aria-expanded="false">Courses<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
                 <ul class="drawer__sub">
-                    <li><a href="#courses" data-filter-link="ib">International Baccalaureate</a></li>
-                    <li><a href="#courses" data-filter-link="cambridge">Cambridge &amp; UK Boards</a></li>
-                    <li><a href="#courses" data-filter-link="american">American Curriculum</a></li>
-                    <li><a href="#courses" data-filter-link="test">Test Prep &amp; Competitive</a></li>
+                    <li><a href="courses.html">All Programs</a></li>
+                    <li><a href="courses.html#ib">International Baccalaureate</a></li>
+                    <li><a href="courses.html#cambridge">Cambridge &amp; UK Boards</a></li>
+                    <li><a href="courses.html#american">American Curriculum</a></li>
+                    <li><a href="courses.html#test">Test Prep &amp; Competitive</a></li>
                 </ul>
             </li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#why">Why Choose Us</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="worksheets.html">Worksheets</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="drawer__foot">
-            <a href="#contact" class="btn btn--primary btn--block"><span>Enquire Now</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#enquiry" class="btn btn--primary btn--block"><span>Enquire Now</span><i class="fa-solid fa-arrow-right"></i></a>
             <a href="tel:+919820777655" class="drawer__contact"><i class="fa-solid fa-phone"></i> +91 98207 77655</a>
             <a href="mailto:hello@knowlytutorials.com" class="drawer__contact"><i class="fa-regular fa-envelope"></i> hello@knowlytutorials.com</a>
         </div>
@@ -258,7 +267,7 @@
                                 </h2>
                                 <p class="hero__text">Learn at our Mumbai centres, in your own space with home tutoring, or beyond boundaries with live online lessons.</p>
                                 <div class="hero__ctas">
-                                    <a href="#contact" class="btn btn--primary" data-cursor="Start"><span>Start Learning</span><i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#enquiry" class="btn btn--primary" data-cursor="Start"><span>Start Learning</span><i class="fa-solid fa-arrow-right"></i></a>
                                     <a href="#services" class="btn btn--ghost"><span>How We Teach</span><i class="fa-solid fa-arrow-down"></i></a>
                                 </div>
                             </div>
@@ -433,7 +442,7 @@
                                         <small>IB</small>
                                         <strong>International Baccalaureate</strong>
                                     </div>
-                                    <a href="#contact" class="prog__info-go" tabindex="-1" data-cursor="Enquire"><i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#enquiry" class="prog__info-go" tabindex="-1" data-cursor="Enquire"><i class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                                 <div class="prog__info-more">
                                     <p class="prog__info-desc">Tutoring across the IB continuum, from primary years through the Diploma and Career-related Programme.</p>
@@ -466,7 +475,7 @@
                                     <img class="prog__thumb" src="assets/images/program-ib-mobile.jpg" data-fallback="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fm=webp&fit=crop&w=800&h=450&q=72" alt="International Baccalaureate learning" width="800" height="450" loading="lazy">
                                     <p>Tutoring across the IB continuum, from primary years through the Diploma and Career-related Programme.</p>
                                     <ul class="tags"><li>PYP</li><li>MYP</li><li>IBDP</li><li>IBCP</li></ul>
-                                    <a href="#contact" class="prog__link">Enquire about IB <i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#enquiry" class="prog__link" data-enquire="IB">Enquire about IB<i class="fa-solid fa-arrow-right"></i></a>
                                 </div></div>
                             </div>
                             <span class="prog__timer" aria-hidden="true"></span>
@@ -485,7 +494,7 @@
                                     <img class="prog__thumb" src="assets/images/program-cambridge-mobile.jpg" data-fallback="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?fm=webp&fit=crop&w=800&h=450&q=72" alt="Cambridge IGCSE study notes" width="800" height="450" loading="lazy">
                                     <p>Structured support for Cambridge learners through IGCSE and on to AS &amp; A Level examinations.</p>
                                     <ul class="tags"><li>IGCSE</li><li>AS Level</li><li>A Level</li></ul>
-                                    <a href="#contact" class="prog__link">Enquire about Cambridge <i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#enquiry" class="prog__link" data-enquire="Cambridge IGCSE &amp; AS/A Levels">Enquire about Cambridge<i class="fa-solid fa-arrow-right"></i></a>
                                 </div></div>
                             </div>
                             <span class="prog__timer" aria-hidden="true"></span>
@@ -504,7 +513,7 @@
                                     <img class="prog__thumb" src="assets/images/program-gcse-mobile.jpg" data-fallback="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?fm=webp&fit=crop&w=800&h=450&q=72" alt="Stack of books for GCSE study" width="800" height="450" loading="lazy">
                                     <p>Board-specific guidance for GCSE students preparing with the major UK exam boards.</p>
                                     <ul class="tags"><li>OCR</li><li>AQA</li><li>Edexcel</li><li>WJEC</li></ul>
-                                    <a href="#contact" class="prog__link">Enquire about GCSE <i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#enquiry" class="prog__link" data-enquire="GCSE">Enquire about GCSE<i class="fa-solid fa-arrow-right"></i></a>
                                 </div></div>
                             </div>
                             <span class="prog__timer" aria-hidden="true"></span>
@@ -523,7 +532,7 @@
                                     <img class="prog__thumb" src="assets/images/program-american-mobile.jpg" data-fallback="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?fm=webp&fit=crop&w=800&h=450&q=72" alt="University campus representing American curriculum" width="800" height="450" loading="lazy">
                                     <p>Subject tutoring for students following the American curriculum. <span class="placeholder-note">Grade levels to be added.</span></p>
                                     <ul class="tags"><li>Subject Tutoring</li></ul>
-                                    <a href="#contact" class="prog__link">Enquire about American Curriculum <i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#enquiry" class="prog__link" data-enquire="American Curriculum">Enquire about American Curriculum<i class="fa-solid fa-arrow-right"></i></a>
                                 </div></div>
                             </div>
                             <span class="prog__timer" aria-hidden="true"></span>
@@ -542,7 +551,7 @@
                                     <img class="prog__thumb" src="assets/images/program-ap-mobile.jpg" data-fallback="https://images.unsplash.com/photo-1532094349884-543bc11b234d?fm=webp&fit=crop&w=800&h=450&q=72" alt="Science experiment representing AP subjects" width="800" height="450" loading="lazy">
                                     <p>Focused preparation for AP courses and exams. <span class="placeholder-note">Subject list to be added.</span></p>
                                     <ul class="tags"><li>AP Exams</li></ul>
-                                    <a href="#contact" class="prog__link">Enquire about AP <i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#enquiry" class="prog__link" data-enquire="Advanced Placement (AP)">Enquire about AP<i class="fa-solid fa-arrow-right"></i></a>
                                 </div></div>
                             </div>
                             <span class="prog__timer" aria-hidden="true"></span>
@@ -561,7 +570,7 @@
                                     <img class="prog__thumb" src="assets/images/program-sat-act-mobile.jpg" data-fallback="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?fm=webp&fit=crop&w=800&h=450&q=72" alt="Maths formulas on a chalkboard for SAT and ACT prep" width="800" height="450" loading="lazy">
                                     <p>Preparation for the SAT and ACT standardised tests used in university admissions.</p>
                                     <ul class="tags"><li>SAT</li><li>ACT</li></ul>
-                                    <a href="#contact" class="prog__link">Enquire about SAT / ACT <i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#enquiry" class="prog__link" data-enquire="SAT / ACT">Enquire about SAT / ACT<i class="fa-solid fa-arrow-right"></i></a>
                                 </div></div>
                             </div>
                             <span class="prog__timer" aria-hidden="true"></span>
@@ -580,7 +589,7 @@
                                     <img class="prog__thumb" src="assets/images/program-olympiad-mobile.jpg" data-fallback="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?fm=webp&fit=crop&w=800&h=450&q=72" alt="Problem solving for competitive exams and Olympiads" width="800" height="450" loading="lazy">
                                     <p>Training for competitive exams and Olympiad-style problem solving. <span class="placeholder-note">Exam list to be added.</span></p>
                                     <ul class="tags"><li>Olympiad</li><li>Competitive</li></ul>
-                                    <a href="#contact" class="prog__link">Enquire about Olympiads <i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#enquiry" class="prog__link" data-enquire="Competitive Exams &amp; Olympiads">Enquire about Olympiads<i class="fa-solid fa-arrow-right"></i></a>
                                 </div></div>
                             </div>
                             <span class="prog__timer" aria-hidden="true"></span>
@@ -591,7 +600,7 @@
                 <div class="prog__cta" data-aos="fade-up">
                     <span class="prog__cta-icon" aria-hidden="true"><i class="fa-regular fa-compass"></i></span>
                     <p>Not sure which board is right? <strong>Our advisors will help you choose.</strong></p>
-                    <a href="#contact" class="btn btn--dark btn--sm" data-cursor="Talk"><span>Talk to an advisor</span><i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#enquiry" class="btn btn--dark btn--sm" data-cursor="Talk"><span>Talk to an advisor</span><i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -1066,7 +1075,7 @@
                         <p>Tell us about your curriculum and goals — we’ll help you find the right program and learning format.</p>
                         <div class="cta__btns">
                             <a href="#courses" class="btn btn--light"><span>Explore Courses</span><i class="fa-solid fa-arrow-right"></i></a>
-                            <a href="#contact" class="btn btn--primary"><span>Enquire Now</span><i class="fa-solid fa-paper-plane"></i></a>
+                            <a href="#enquiry" class="btn btn--primary"><span>Enquire Now</span><i class="fa-solid fa-paper-plane"></i></a>
                         </div>
                         <div class="cta__quick">
                             <a href="https://wa.me/919820777655" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -1074,6 +1083,132 @@
                             <a href="mailto:hello@knowlytutorials.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             ENQUIRY FORM
+        ========================= -->
+        <section class="enquiry section" id="enquiry">
+            <div class="container">
+                <div class="enquiry__wrap" data-aos="fade-up">
+                    <aside class="enquiry__info">
+                        <span class="enquiry__ring" aria-hidden="true"></span>
+                        <span class="eyebrow eyebrow--light">Enquire Now</span>
+                        <h2 class="section-title section-title--light">Let’s find the right <em>program for you.</em></h2>
+                        <p>Share a few details and our team will get in touch to guide you on curriculum, learning format and schedule.</p>
+                        <ul class="enquiry__points">
+                            <li><i class="fa-solid fa-route"></i> Guidance on the right board &amp; program</li>
+                            <li><i class="fa-solid fa-users"></i> Small batches of 4–5 or 1:1 support</li>
+                            <li><i class="fa-solid fa-laptop-house"></i> In-centre, at home or live online</li>
+                        </ul>
+                        <div class="enquiry__quick">
+                            <a href="tel:+919820777655"><i class="fa-solid fa-phone"></i> +91 98207 77655</a>
+                            <a href="https://wa.me/919820777655" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                            <a href="mailto:hello@knowlytutorials.com"><i class="fa-regular fa-envelope"></i> hello@knowlytutorials.com</a>
+                        </div>
+                    </aside>
+
+                    <form class="eform" id="enquiryForm" novalidate>
+                        <div class="eform__head">
+                            <h3>Enquiry form</h3>
+                            <div class="eform__progress" aria-hidden="true"><small>Completed <b>0%</b></small><div class="eform__bar"><span></span></div></div>
+                        </div>
+                        <div class="eform__grid">
+                            <div class="field">
+                                <input id="ef-name" name="name" type="text" placeholder=" " autocomplete="name" required>
+                                <label for="ef-name">Student / Parent name *</label>
+                                <i class="fa-regular fa-user field__icon" aria-hidden="true"></i>
+                                <small class="field__err" aria-live="polite"></small>
+                            </div>
+                            <div class="field">
+                                <input id="ef-phone" name="phone" type="tel" placeholder=" " autocomplete="tel" inputmode="tel" required>
+                                <label for="ef-phone">Phone number *</label>
+                                <i class="fa-solid fa-phone field__icon" aria-hidden="true"></i>
+                                <small class="field__err" aria-live="polite"></small>
+                            </div>
+                            <div class="field">
+                                <input id="ef-email" name="email" type="email" placeholder=" " autocomplete="email">
+                                <label for="ef-email">Email address</label>
+                                <i class="fa-regular fa-envelope field__icon" aria-hidden="true"></i>
+                                <small class="field__err" aria-live="polite"></small>
+                            </div>
+                            <div class="field">
+                                <select id="ef-grade" name="grade">
+                                    <option value="" selected></option>
+                                    <option>Grade 1–5</option>
+                                    <option>Grade 6–8</option>
+                                    <option>Grade 9–10</option>
+                                    <option>Grade 11–12</option>
+                                    <option>Other</option>
+                                </select>
+                                <label for="ef-grade">Grade / Year</label>
+                            </div>
+                            <div class="field eform__full">
+                                <select id="ef-curriculum" name="curriculum" required>
+                                    <option value="" selected></option>
+                                    <option value="IB">International Baccalaureate (PYP / MYP / IBDP / IBCP)</option>
+                                    <option value="Cambridge IGCSE &amp; AS/A Levels">Cambridge IGCSE &amp; AS/A Levels</option>
+                                    <option value="GCSE">GCSE (OCR / AQA / Edexcel / WJEC)</option>
+                                    <option value="American Curriculum">American Curriculum</option>
+                                    <option value="Advanced Placement (AP)">Advanced Placement (AP)</option>
+                                    <option value="SAT / ACT">SAT / ACT</option>
+                                    <option value="Competitive Exams &amp; Olympiads">Competitive Exams &amp; Olympiads</option>
+                                    <option value="Not sure yet">Not sure yet — please guide me</option>
+                                </select>
+                                <label for="ef-curriculum">Curriculum / Program *</label>
+                                <small class="field__err" aria-live="polite"></small>
+                            </div>
+                            <fieldset class="eform__full" style="border:0">
+                                <legend class="chips-label">Preferred learning format</legend>
+                                <div class="chips">
+                                    <label class="chip-opt"><input type="radio" name="mode" value="At a centre"><span><i class="fa-solid fa-building-columns"></i> At a centre</span></label>
+                                    <label class="chip-opt"><input type="radio" name="mode" value="At home"><span><i class="fa-solid fa-house"></i> At home</span></label>
+                                    <label class="chip-opt"><input type="radio" name="mode" value="Online"><span><i class="fa-solid fa-laptop"></i> Online</span></label>
+                                </div>
+                            </fieldset>
+                            <div class="eform__reveal eform__full">
+                                <div>
+                                    <div class="field">
+                                        <select id="ef-centre" name="centre">
+                                            <option value="" selected></option>
+                                            <option>Breach Candy</option>
+                                            <option>Kandivali East</option>
+                                            <option>Santacruz</option>
+                                            <option>Parel</option>
+                                            <option>Not sure</option>
+                                        </select>
+                                        <label for="ef-centre">Preferred centre</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field eform__full">
+                                <textarea id="ef-message" name="message" placeholder=" " rows="4"></textarea>
+                                <label for="ef-message">Subjects, goals or questions</label>
+                            </div>
+                            <div class="eform__full">
+                                <label class="consent">
+                                    <input type="checkbox" name="consent" required>
+                                    <span class="consent__box"><i class="fa-solid fa-check"></i></span>
+                                    <span>I agree to be contacted by Knowly about this enquiry.</span>
+                                </label>
+                            </div>
+                            <div class="eform__actions eform__full">
+                                <button type="submit" class="btn btn--primary" data-cursor="Send"><span>Send Enquiry</span><i class="fa-solid fa-paper-plane"></i></button>
+                                <small><i class="fa-brands fa-whatsapp"></i> Opens WhatsApp with your details filled in.</small>
+                            </div>
+                        </div>
+
+                        <div class="eform__success" role="status" aria-live="polite">
+                            <div>
+                                <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44"/><circle class="tick-ring" cx="50" cy="50" r="44" pathLength="1"/><path class="tick" d="M31 51 L45 64 L70 37" pathLength="1"/></svg>
+                                <h3>Thank you, <span class="eform__who">there</span>!</h3>
+                                <p>Your enquiry is ready in WhatsApp — just press send. Our team will get back to you shortly.</p>
+                                <button type="button" class="btn btn--dark btn--sm eform__again"><span>Send another enquiry</span><i class="fa-solid fa-rotate-left"></i></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -1128,7 +1263,7 @@
         <div class="footer__pattern" aria-hidden="true"></div>
         <div class="container footer__grid">
             <div class="footer__brand">
-                <a href="#home" class="footer__logo" aria-label="Knowly Tutorials — Home"><img src="assets/images/logo1.png" alt="Knowly" width="132" height="60" loading="lazy"></a>
+                <a href="index.html" class="footer__logo" aria-label="Knowly Tutorials — Home"><img src="assets/images/logo1.png" alt="Knowly" width="132" height="60" loading="lazy"></a>
                 <p>A little guidance. A world of possibility. Personalised tutoring for international curricula — in-centre, at home and online.</p>
                 <ul class="footer__social">
                     <li><a href="https://www.instagram.com/knowlylearningcentre/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
@@ -1140,18 +1275,28 @@
             <div>
                 <h3 class="footer__title">Quick Links</h3>
                 <ul class="footer__links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#why">Why Choose Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="worksheets.html">Worksheets</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="footer__title">Courses</h3>
-                <!-- Populated from the program list by script.js -->
-                <ul class="footer__links" id="footerCourses"></ul>
+                <ul class="footer__links" id="footerCourses">
+                    <li><a href="courses.html#ib">International Baccalaureate</a></li>
+                    <li><a href="courses.html#cambridge">Cambridge IGCSE &amp; AS/A Levels</a></li>
+                    <li><a href="courses.html#gcse">GCSE</a></li>
+                    <li><a href="courses.html#american">American Curriculum</a></li>
+                    <li><a href="courses.html#ap">Advanced Placement (AP)</a></li>
+                    <li><a href="courses.html#sat">SAT / ACT</a></li>
+                    <li><a href="courses.html#olympiad">Competitive Exams &amp; Olympiads</a></li>
+                </ul>
             </div>
             <div>
                 <h3 class="footer__title">Contact</h3>
@@ -1163,11 +1308,7 @@
             </div>
         </div>
         <div class="container footer__bottom">
-            <p>© <span id="year">2026</span> Knowly Tutorials. All rights reserved.</p>
-            <p><a href="https://www.mesotek.com/" target="_blank" rel="noopener">
-                Designed by Mesotek
-            </a></p>
-        </div>
+            <p>© <span id="year">2026</span> Knowly Tutorials. All rights reserved.</p>        </div>
     </footer>
 
     <!-- =========================
